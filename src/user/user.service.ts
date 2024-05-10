@@ -19,6 +19,10 @@ export class UserService {
     return this.userRepository.findOneBy({ id: userId });
   }
 
+  getUserByEmail(email: string): Promise<User | null> {
+    return this.userRepository.findOneBy({ email });
+  }
+
   createUser(payload: UpdateUserDto) {
     return this.userRepository.save(payload);
   }
