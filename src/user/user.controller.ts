@@ -16,7 +16,7 @@ export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Get()
-  getUsers(): string {
+  getUsers() {
     return this.userService.getUsers();
   }
 
@@ -26,8 +26,8 @@ export class UserController {
   }
 
   @Post()
-  setUser(@Body() payload: UpdateUserDto): string {
-    return this.userService.setUser(payload);
+  setUser(@Body() payload: UpdateUserDto) {
+    return this.userService.createUser(payload);
   }
 
   @Patch('/:userId')
